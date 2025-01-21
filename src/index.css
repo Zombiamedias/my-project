@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .menu-right{
+    right: 0;
+    top: 0;
+    background-color: #1cb5e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    padding: 1rem;
+} */
