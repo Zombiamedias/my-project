@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaCode } from "react-icons/fa";
 import { FaWpforms } from "react-icons/fa";
-
+import { TiThMenu } from "react-icons/ti";
 
 const menuData = [
   {
@@ -59,12 +59,15 @@ const MenuItem = ({ item }) => {
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-
+  const [mobileView, setMobileView] = useState(false);
   return (
-    <nav className="fixed flex top-0 left-0 right-0 w-full z-50 bg-[#1cb5e0] mx-0 my-0 p-1rem">
+    <nav className="fixed flex top-0 left-0 right-0 w-full z-50 bg-[#1cb5e0] mx-0 my-0 p-1rem text-white">
       <div className="container mx-auto py-6 px-2">
         {/*Desktop Menu */}
-        <ul className="flex flex-col space-x-10 box-content  md:flex-row items-center text-white justify-between">
+        <button className="md:hidden flex absolute w-[5em] h-[5em] p-0 m-4 m-auto justify-self-center align-baseline" >
+        <TiThMenu className="text-[4vh]"/>
+        </button>
+        <ul className="flex flex-col md:space-x-10 space-y-10  box-content  md:flex-row items-center  justify-between">
           {/* Logo */}
           <li className=" text-xl ">
             <a href="/Inicio" className="flex space-x-2 items-center">
@@ -73,7 +76,7 @@ const Navbar = () => {
             </a>
           </li>
           {/* Menu Items */}
-          <li className="space-x-10 text-right  items-center">
+          <li className="flex flex-col md:flex-row text-center space-y-2 md:space-x-10 md:text-right  items-center">
             <a
               href="/services"
               role="menuitem"
@@ -135,18 +138,10 @@ const Navbar = () => {
             </a>
           </li>
           
-          <button className="absolute flex w-[45px] h-[45px] right-10 rounded-full border-4 border-white bg-white text-blue-500 hover:text-white hover:bg-blue-500 items-center justify-center transition-all ease-in-out duration-300 ">
+          <button className="absolute top-0 flex w-[45px] h-[45px] right-10 rounded-full border-4 border-white bg-white text-blue-500 hover:text-white hover:bg-blue-500 items-center justify-center transition-all ease-in-out duration-300 ">
           <FaWpforms className="text-[1.5rem]"/>
           </button>
-          
-
-
-          <button className="absolute right-10 w-[50px] h-[50px] flex items-center justify-center rounded-full border-4 border-white bg-white text-blue-500 hover:bg-blue-500 hover:text-white shadow-md transition-all duration-300 ease-in-out">
-  <FaWpforms className="text-[1.5rem]" />
-</button>
-
         </ul>
-        
       </div>
     </nav>
   );
